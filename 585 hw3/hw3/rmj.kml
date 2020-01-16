@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
+</Style>
+<Style id="s1">
+<LineStyle>
+<color>7f0000ff</color>
+<width>4</width>
+</LineStyle>
+<PolyStyle>
+<color>7f0000ff</color>
+<colorMode>normal</colorMode>
+<fill>1</fill>
+<outline>1</outline>
+</PolyStyle>
+</Style>
+<Placemark><name>MRF</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2831756,34.0223964</coordinates></Point>
+</Placemark>
+<Placemark><name>DCC</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2812501,34.0216359</coordinates></Point>
+</Placemark>
+<Placemark><name>TRO</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2823119,34.0192079</coordinates></Point>
+</Placemark>
+<Placemark><name>DOHENY</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2841337,34.0203498</coordinates></Point>
+</Placemark>
+<Placemark><name>AHF</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2853367,34.0198217</coordinates></Point>
+</Placemark>
+<Placemark><name>SGM</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2892712,34.0211550</coordinates></Point>
+</Placemark>
+<Placemark><name>VHE</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2881151,34.0201539</coordinates></Point>
+</Placemark>
+<Placemark><name>WAH</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2873210,34.0193686</coordinates></Point>
+</Placemark>
+<Placemark><name>SAL</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2896730,34.0197113</coordinates></Point>
+</Placemark>
+<Placemark><name>GER</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2902002,34.0201861</coordinates></Point>
+</Placemark>
+<Placemark><name>LRC</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2878587,34.0244086</coordinates></Point>
+</Placemark>
+<Placemark><name>HOME</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2730212,34.0278195</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>ConvexHullall</name>
+<Style><LineStyle><color>ffff7d53</color></LineStyle><PolyStyle><color>80fe4d28</color></PolyStyle></Style>
+<Polygon>
+<outerBoundaryIs>
+<LinearRing>
+<coordinates>-118.2823119,34.0192079 -118.287321,34.0193686 -118.289673,34.0197113 -118.2902002,34.0201861 -118.2878587,34.0244086 -118.2730212,34.0278195 -118.2823119,34.0192079</coordinates>
+</LinearRing>
+</outerBoundaryIs>
+</Polygon> 
+</Placemark>
+
+<Placemark>
+<name>Neighbour1</name>
+<description>Neighbour1</description>
+<Style><LineStyle><color>ff0000ff</color><width>2</width></LineStyle></Style>
+<LineString>
+<coordinates>-118.2730212,34.0278195 -118.2812501,34.0216359</coordinates>
+</LineString>
+</Placemark>
+
+<Placemark>
+<name>Neighbour2</name>
+<description>Neighbour2</description>
+<Style><LineStyle><color>ff0000ff</color><width>2</width></LineStyle></Style>
+<LineString>
+<coordinates>-118.2730212,34.0278195 -118.2831756,34.0223964</coordinates>
+</LineString>
+</Placemark>
+
+<Placemark>
+<name>Neighbour3</name>
+<description>Neighbour3</description>
+<Style><LineStyle><color>ff0000ff</color><width>2</width></LineStyle></Style>
+<LineString>
+<coordinates>-118.2730212,34.0278195 -118.2823119,34.0192079</coordinates>
+</LineString>
+</Placemark>
+
+<Placemark>
+<name>Neighbour4</name>
+<description>Neighbour4</description>
+<Style><LineStyle><color>ff0000ff</color><width>2</width></LineStyle></Style>
+<LineString>
+<coordinates>-118.2730212,34.0278195 -118.2841337,34.0203498</coordinates>
+</LineString>
+</Placemark>
+
+
+</Document></kml>

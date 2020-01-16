@@ -1,0 +1,53 @@
+1.Create Graph
+graph = TinkerGraph.open()
+g=graph.traversal()
+v1=g.addV("CS101").property(id, "CS101").next()
+v2=g.addV("CS201").property(id, "CS201").next()
+v3=g.addV("CS220").property(id, "CS220").next()
+v4=g.addV("CS420").property(id, "CS420").next()
+v5=g.addV("CS334").property(id, "CS334").next()
+v6=g.addV("CS681").property(id, "CS681").next()
+v7=g.addV("CS400").property(id, "CS400").next()
+v8=g.addV("CS526").property(id, "CS526").next()
+g.addE("requires pre-req").from(v2).to(v1).property(id, 1)
+g.addE("requires pre-req").from(v3).to(v2).property(id, 2)
+g.addE("requires pre-req").from(v4).to(v3).property(id, 3)
+g.addE("is a co-req of").from(v4).to(v3).property(id, 4)
+g.addE("requires pre-req").from(v5).to(v2).property(id, 5)
+g.addE("requires pre-req").from(v6).to(v5).property(id, 6)
+g.addE("requires pre-req").from(v7).to(v5).property(id, 7)
+g.addE("requires pre-req").from(v8).to(v7).property(id, 8)
+g.addE("is a co-req of").from(v8).to(v7).property(id, 9)
+
+==>graphtraversalsource[tinkergraph[vertices:8 edges:9], standard]
+
+//I used TinkerGraph.open() to create an empty graph, which has no edges and vertices. Then I used g=graph.traversal() to make g as a traversal.
+//I used g.addV() to create 8 vertices from v1 to v8 and use property(id, XXX) to make different course name as their ids.
+//I used g.addE() to create 9 edges, use from() and to() to set vertices for the edges. And I used "requires pre-req" and "is a co-req of" as properties for edges.
+
+2.Output double connected nodes
+g.V().as("a").out("requires pre-req").as("b").in("is a co-req of").select("a","b")
+
+==>[a:v[CS420],b:v[CS220]]
+==>[a:v[CS526],b:v[CS400]]
+
+//I used g to traverse the nodes(label it as "a" using "from") to find whose out edges has "requires pre-req" as property and used "in" to find the edges also has property "is a co-req of", use "to" to label another node(inV()) as "b". Then I selected node "a" and node "b" to print.
+
+3.Output ancestors
+g.V().has(id, "CS526").repeat(out("requires pre-req")).emit()
+
+==>v[CS400]
+==>v[CS334]
+==>v[CS201]
+==>v[CS101]
+
+//I used g to traverse the graph, V() to show the vertices whose id is "CS526" using has(id, "CS526"). I used "repeat" to iterate to find edges whose property is "requires pre-req" and "emit" to emit vertices at each iteration when the command repeat.
+
+4.Output max depth
+g.V().has(id, "CS101").repeat(__.in("requires pre-req")).emit().path().count(local).max()
+
+==>5
+
+//I used g to traverse the graph, V() to show the vertices whose id is "CS101" using has(id, "CS526"). Then I use __.in("requires pre-req") to select the nodes which can be reached by inward edges having property "requires pre-req". I used emit().path() to go through all the selected vertices. I used count() to find the total number of traversal in the streams of traversal and "local" is used to count the local object in the stream. Finally I used max() to find the max value from the stream of traversal.
+
+
